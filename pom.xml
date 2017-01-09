@@ -10,7 +10,7 @@
   <groupId>com.github.guoxuedong</groupId>
   <artifactId>java-erasure</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>java-erasure</name>
   <url>https://github.com/guoxuedong/java-erasure</url>
   <description>A Java erasure codes wrapper library for Jerasure</description>
@@ -27,7 +27,7 @@
     <url>https://github.com/guoxuedong/java-erasure</url>
     <connection>scm:git:git@github.com:guoxuedong/java-erasure.git</connection>
     <developerConnection>scm:git:git@github.com:guoxuedong/java-erasure.git</developerConnection>
-    <tag>java-erasure-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
