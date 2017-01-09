@@ -22,7 +22,8 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 
 /**
- * A simple JNA wrapper of Jerasure{@see https://bitbucket.org/jimplank/jerasure}.
+ * A simple JNA wrapper of Jerasure.
+ * @see <a href="https://bitbucket.org/jimplank/jerasure">Jerasure</a>.
  */
 public interface JerasureLibrary extends Library {
 
@@ -31,21 +32,42 @@ public interface JerasureLibrary extends Library {
 
   /**
    * Allocates and returns a m × k Vandermonde matrix in GF(2^w).
+   *
+   * @param k The number of data devices
+   * @param m The number of coding devices
+   * @param w The word size of the code
+   * @return m × k Vandermonde matrix
    */
   Pointer reed_sol_vandermonde_coding_matrix(int k, int m, int w);
 
   /**
    * Allocates and returns a Cauchy matrix in GF(2^w).
+   *
+   * @param k The number of data devices
+   * @param m The number of coding devices
+   * @param w The word size of the code
+   * @return m × k Cauchy matrix
    */
   Pointer cauchy_original_coding_matrix(int k, int m, int w);
 
   /**
    * Allocates and returns optimized a Cauchy matrix in GF(2^w).
+   *
+   * @param k The number of data devices
+   * @param m The number of coding devices
+   * @param w The word size of the code
+   * @return a optimized m × k Cauchy matrix
    */
   Pointer cauchy_good_general_coding_matrix(int k, int m, int w);
 
   /**
    * Converts a m × k matrix in GF(2^w) to a wm × wk bit-matrix.
+   *
+   * @param k The number of data devices
+   * @param m The number of coding devices
+   * @param w The word size of the code
+   * @param matrix m × k matrix
+   * @return wm × wk bit-matrix
    */
   Pointer jerasure_matrix_to_bitmatrix(int k, int m, int w, int[] matrix);
 
@@ -145,6 +167,7 @@ public interface JerasureLibrary extends Library {
   /**
    * Encodes with a schedule.
    *
+   * @param k The number of data devices
    * @param m The number of coding devices
    * @param w The word size of the code
    * @param schedule The schedule matrix

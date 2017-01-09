@@ -26,6 +26,9 @@ public class CodecUtils {
 
   /**
    * Adjusts the erasures array to satisfy the Jerasure library's requirements.
+   *
+   * @param erasures erasures array
+   * @return erasures array with last element -1
    */
   public static int[] adjustErasures(int[] erasures) {
     int[] adjustedErasures =  Arrays.copyOf(erasures, erasures.length + 1);
@@ -35,6 +38,12 @@ public class CodecUtils {
 
   /**
    * Copies back the decoded and data and coding to the java specified buffers.
+   *
+   * @param dataPtrs JNA Pointer array, decoded data
+   * @param codingPtrs JNA Pointer array, coding
+   * @param erasures erasures array
+   * @param data java array, decoded data
+   * @param coding java array, coding
    */
   public static void copyBackDecoded(Pointer[] dataPtrs, Pointer[] codingPtrs,
       int[] erasures, byte[][] data,
@@ -57,6 +66,9 @@ public class CodecUtils {
 
   /**
    * Converts a java byte[][] array to JNA Pointer[] array.
+   *
+   * @param array java array
+   * @return JNA Pointer array
    */
   public static Pointer[] toPointerArray(byte[][] array) {
     Pointer[] ptrArray = new Pointer[array.length];
@@ -69,6 +81,9 @@ public class CodecUtils {
 
   /**
    * Converts JNA Pointer[] array to java byte[][] array.
+   *
+   * @param ptrArray JNA Pointer array, source
+   * @param array java array, destination
    */
   public static void toByteArray(Pointer[] ptrArray, byte[][] array) {
     for (int i = 0; i < array.length; ++i) {
@@ -79,6 +94,9 @@ public class CodecUtils {
 
   /**
    * Prints a byte[][] array as a matrix.
+   *
+   * @param matrix data to print
+   * @param printMatrix whether to print the matrix data
    */
   public static void printMatrix(byte[][] matrix, boolean printMatrix) {
     if (printMatrix) {
@@ -94,6 +112,11 @@ public class CodecUtils {
 
   /**
    * Prints a int[] array as a matrix.
+   *
+   * @param matrix matrix data to print
+   * @param row matrix row
+   * @param col matrix col
+   * @param printMatrix whether to print the matrix data
    */
   public static void printMatrix(int[] matrix, int row, int col,
       boolean printMatrix) {
