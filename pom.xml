@@ -26,8 +26,8 @@
 
   <scm>
     <url>https://github.com/guoxuedong/java-erasure</url>
-    <connection>git@github.com:guoxuedong/java-erasure.git</connection>
-    <developerConnection>https://github.com/guoxuedong</developerConnection>
+    <connection>scm:git:git@github.com:guoxuedong/java-erasure.git</connection>
+    <developerConnection>scm:git:git@github.com:guoxuedong/java-erasure.git</developerConnection>
   </scm>
 
   <developers>
