@@ -122,16 +122,16 @@
   </profiles>
 
   <distributionManagement>
-    <repository>
+    <snapshotRepository>
       <id>oss</id>
       <name>OSS Snapshots Repository</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </repository>
-    <snapshotRepository>
+    </snapshotRepository>
+    <repository>
       <id>oss</id>
       <name>OSS Staging Repository</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </snapshotRepository>
+    </repository>
   </distributionManagement>
 
   <build>
